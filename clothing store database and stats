@@ -1,0 +1,32 @@
+--Create a clothing store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, item TEXT, size TEXT, rating integer, price integer, section text);
+
+INSERT INTO clothing VALUES (1, "blouse", "Small", "4.9", "19.99", "shirts");
+INSERT INTO clothing VALUES (2, "t-shirt", "medium", "4.8", "15.00", "shirts");
+INSERT INTO clothing VALUES (3, "tank", "x-large", "4.9", "19.99", "shirts");
+INSERT INTO clothing VALUES (4, "jacket", "Small", "4.9", "49.99", "jackets");
+INSERT INTO clothing VALUES (5, "crop pants", "large", "4.8", "40.00", "bottoms");
+INSERT INTO clothing VALUES (6, "shorts", "Small", "4.7", "19.99", "bottoms");
+INSERT INTO clothing VALUES (7, "pants", "Small", "4.4", "19.99", "bottoms");
+INSERT INTO clothing VALUES (8, "jeans", "medium", "4.9", "79.99", "bottoms");
+INSERT INTO clothing VALUES (9, "dress", "Small", "4.9", "19.99", "dresses");
+INSERT INTO clothing VALUES (10, "skirt", "medium", "4.9", "19.99", "skirts");
+INSERT INTO clothing VALUES (11, "bathing suit", "Small", "4.0", "19.99", "swim");
+INSERT INTO clothing VALUES (12, "bra", "Small", "4.9", "19.99", "intimates");
+INSERT INTO clothing VALUES (13, "necklace", "Small", "4.9", "19.99", "accessories");
+INSERT INTO clothing VALUES (14, "sweater", "Small", "4.9", "19.99", "tops");
+INSERT INTO clothing VALUES (15, "cardigan", "xxlarge", "5", "19.99", "tops");
+
+--display the database ordered by price in ascending order. 
+select * from clothing order by price asc
+
+--what is the avg price of bottoms? 
+SELECT AVG(price) "avg price of bottoms"
+FROM clothing
+where section='bottoms'; 
+
+--what are the most 5 popular items? 
+SELECT name, price, rating
+FROM clothing
+order by rating desc limit 5;
